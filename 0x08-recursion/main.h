@@ -5,6 +5,6 @@
 #include <unistd.h>
 
 void _puts_recursion(char *s);
-int _putchar(c);
+char _putchar(char c);
 
 #endif
