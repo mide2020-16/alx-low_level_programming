@@ -6,7 +6,7 @@
  * Return: Always Success
  */
 
-void _puts_recursion(c)
+void _puts_recursion(char *s)
 {
 
 	if (*s == '\0')
