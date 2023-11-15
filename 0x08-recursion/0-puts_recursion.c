@@ -8,6 +8,6 @@
 
 void _puts_recursion(char *s)
 {
-	_puts(*s);
+	puts(*s);
 
 }
