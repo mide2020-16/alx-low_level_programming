@@ -18,7 +18,8 @@ int _binary_search(int n, int start, int end)
 	}
 
 	int mid;
-	mid = start + (end - start);
+
+	mid = start + (end - start) / 2;
 
 	if (mid * mid == n)
 	{
@@ -31,12 +32,7 @@ int _binary_search(int n, int start, int end)
 		return (_binary_search(n, mid + 1, end));
 	}
 
-	if (mid * mid > n)
-	{
-		return _binary_search(n, start, mid - 1);
-	
-	
-	}
+	return (_binary_search(n, start, mid - 1));
 }
 /**
  * _sqrt_recursion - Fins=ds the square root of a number.
