@@ -17,7 +17,8 @@ int _binary_search(int n, int start, int end)
 
 	}
 
-	int mid = start + (end - start);
+	int mid;
+	mid = start + (end - start);
 
 	if (mid * mid == n)
 	{
@@ -32,7 +33,9 @@ int _binary_search(int n, int start, int end)
 
 	if (mid * mid > n)
 	{
-		return (_binary_search(n, start, mid - 1));
+		return _binary_search(n, start, mid - 1);
+	
+	
 	}
 }
 /**
