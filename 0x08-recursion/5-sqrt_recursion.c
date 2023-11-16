@@ -51,7 +51,7 @@ int _binary_search(int n, int start, int end)
 
 	if (mid * mid < n)
 	{
-		return (_binay_search(n, mid + 1, end));
+		return (_binary_search(n, mid + 1, end));
 	}
 
 	if (mid * mid > n)
