@@ -30,5 +30,5 @@ int _prime_checker(int n, int div)
 
 int is_prime_number(int n)
 {
-	_prime_checker(n, 2);
+	return (_prime_checker(n, 2));
 }
