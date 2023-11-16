@@ -11,13 +11,14 @@
 
 int _binary_search(int n, int start, int end)
 {
+
+	int mid;
+
 	if (start > end)
 	{
 		return (-1);
 
 	}
-
-	int mid;
 
 	mid = start + (end - start) / 2;
 
