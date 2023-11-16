@@ -1,10 +1,9 @@
 #include "main.h"
 
-/*
- * _strlen_recursion: A function that retu
- * rns the length of a string.
+/**
+ * _strlen_recursion -  A function that returns the length of a string.
  * @s: the string to use.
- * return : Alwyas Success
+ * Return : Lenght of the string.
  */
 
 int _strlen_recursion(char *s)
