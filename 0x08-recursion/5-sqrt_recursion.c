@@ -45,7 +45,7 @@ int _binary_search(int n, int start, int end)
 
 int _sqrt_recursion(int n)
 {
-	if ((n != 0 && n == (n / 2) * (n / 2)) || n < 0)
+	if (n < 0)
 	{
 		return (-1);
 
