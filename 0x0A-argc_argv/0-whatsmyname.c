@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * char main - A program tha prnts its name followed by anew line
+ * main - nmae of file followed by a newline
  *
  * @argc: count arg
  *
@@ -12,7 +12,10 @@
 
 char main(int argc, char *argv[])
 {
-	printf("%s\n", argv[argc]);
+	if (argc > 0)
+	{
+		printf("%s\n", argv[0]);
+	}
 
 	return (0);
 }
