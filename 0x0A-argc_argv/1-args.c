@@ -4,18 +4,13 @@
  * args - The number of aruments passed to acli
  *
  * @argc: The count
- *
+ * @argv: vector
  * Return: Success
  */
 
-int args(int argc)
+int args(int argc, char *argv[])
 {
-
-	if (argc > 1)
-	{
-		printf("%d\n", argc);
-
-	}
+	printf("%d\n", argc - 1);
 
 	return (0);
 }
