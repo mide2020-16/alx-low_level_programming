@@ -5,6 +5,7 @@
 #include <unistd.h>
 
 char main(int argc, char *argv[]);
+int args(int argc);
 char _putchar(char c);
 
 
