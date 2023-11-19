@@ -17,7 +17,6 @@ int _binary_search(int n, double espilon)
   	*/
 	int guess;
 	espilon = 0.000000000001;
-
 	guess = n / 2;
 
 	while (fabs(guess * guess - n) > espilon)
