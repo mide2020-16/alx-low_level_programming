@@ -1,4 +1,5 @@
 #include "main.h"
+#include <math.h>
 
 
 /**
@@ -9,10 +10,22 @@
  * Return: success ALways
  */
 
-int _binary_search(int n, int start, int end)
+int _binary_search(int n, double espilon)
 {
+	/* This is called Newton-Raphson Iterative Method. I saw this in Mathematics Textbook
+ 	and i asked chtgpt to explain 
+  	*/
+	int guess;
+	espilon = 0.000000000001;
 
-	int mid;
+	guess = n / 2;
+
+	while (fabs(guess * guess - n) > espilon)
+		{
+			guess = 0.5 * (guess + (guess / n));
+		}
+	return guess;
+	/*int mid;
 
 	if (start > end)
 	{
@@ -20,7 +33,7 @@ int _binary_search(int n, int start, int end)
 
 	}
 
-	mid = start + (end - start) / 2;
+	mid = (start + end) / 2;
 
 	if (mid * mid == n)
 	{
@@ -34,6 +47,9 @@ int _binary_search(int n, int start, int end)
 	}
 
 	return (_binary_search(n, start, mid - 1));
+ 	*/
+
+	int 
 }
 /**
  * _sqrt_recursion - Fins=ds the square root of a number.
@@ -55,7 +71,7 @@ int _sqrt_recursion(int n)
 		return (n);
 
 	}
-	return (_binary_search(n, 0, n));
-
+	return (_binary_search(n, epsilon));
+	
 
 }
