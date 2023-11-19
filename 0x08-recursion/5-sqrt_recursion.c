@@ -16,10 +16,9 @@ int _binary_search(int n, double espilon)
  	and i asked chtgpt to explain 
   	*/
 	int guess;
-	espilon = 0.000000000001;
-	guess = n / 2;
+	guess = n /2;
 
-	while (fabs(guess * guess - n) > espilon)
+	while ((guess * guess - n) > espilon)
 		{
 			guess = 0.5 * (guess + (guess / n));
 		}
@@ -48,7 +47,6 @@ int _binary_search(int n, double espilon)
 	return (_binary_search(n, start, mid - 1));
  	*/
 
-	int 
 }
 /**
  * _sqrt_recursion - Fins=ds the square root of a number.
@@ -60,6 +58,7 @@ int _binary_search(int n, double espilon)
 
 int _sqrt_recursion(int n)
 {
+	double espilon = 0.000000000001;
 	if (n < 0)
 	{
 		return (-1);
@@ -70,7 +69,7 @@ int _sqrt_recursion(int n)
 		return (n);
 
 	}
-	return (_binary_search(n, epsilon));
+	return (_binary_search(n, espilon));
 	
 
 }
