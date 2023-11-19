@@ -10,14 +10,14 @@
  */
 double binary_search_recursive(int n, double guess, double epsilon)
 {
-    if (fabs(guess * guess - n) <= epsilon)
-    {
-        return guess;
-    }
-    else
-    {
-        return binary_search_recursive(n, 0.5 * (guess + n / guess), epsilon);
-    }
+	if (fabs(guess * guess - n) <= epsilon)
+	{
+		return (guess);
+	}
+	else
+	{
+	return (binary_search_recursive(n, 0.5 * (guess + n / guess), epsilon));
+	}
 }
 
 /**
@@ -27,12 +27,12 @@ double binary_search_recursive(int n, double guess, double epsilon)
  */
 int _sqrt_recursion(int n)
 {
-    double epsilon = 0.000000000001;
+	double epsilon = 0.000000000001;
 
-    if (n < 0)
-    {
-        return -1;
-    }
+	if (n < 0)
+	{
+		return (-1);
+	}
 
-    return binary_search_recursive(n, n / 2.0, epsilon);
+	return (binary_search_recursive(n, n / 2.0, epsilon));
 }
