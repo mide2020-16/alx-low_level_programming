@@ -4,9 +4,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
-char main(int argc, char *argv[]);
+char _argvv(int argc, char *argv[]);
 int args(int argc);
-char _putchar(char c);
 
 
 
