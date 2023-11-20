@@ -7,7 +7,7 @@
  * Return: Success
  */
 
-int man(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int i;
 
