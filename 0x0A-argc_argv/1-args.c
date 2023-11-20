@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * args - The number of aruments passed to acli
+ * main - The number of arguments passed to acli
  *
  * @argc: The count
  * @argv: vector
  * Return: Success
  */
 
-int args(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	printf("%d\n", argc - 1);
 
