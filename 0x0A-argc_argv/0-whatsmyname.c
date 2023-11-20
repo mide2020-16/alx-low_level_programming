@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _argvv - nmae of file followed by a newline
+ * main - name of file followed by a newline
  *
  * @argc: count arg
  *
@@ -10,7 +10,7 @@
  * Return: Name Success
  */
 
-int _argvv(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	if (argc >= 1)
 	{
