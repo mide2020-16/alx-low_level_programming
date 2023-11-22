@@ -24,6 +24,10 @@ int main(int argc, char *argv[])
 
 	int ans = num1 * num2;
 
+	if ((num1 == 0 || num2 == 0) && (*argv[1] != '0' || *argv[2] != '0'))
+	{
+		return (1);
+	}
 	printf("%d\n", ans);
 
 	return (0);
