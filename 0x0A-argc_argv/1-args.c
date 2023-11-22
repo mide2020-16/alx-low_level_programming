@@ -10,8 +10,14 @@
 
 int main(int argc, char *argv[])
 {
-	int arg = argc - 1;
-	printf("%d\n", arg);
+	int arg;
+
+	arg = argc - 1;
+
+	if (argv != NULL)
+	{
+		printf("%d\n", arg);
+	}
 
 	return (0);
 }
