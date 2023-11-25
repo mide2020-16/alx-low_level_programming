@@ -1,6 +1,13 @@
 #include "main.h"
 #include <stdlib.h>
 
+/**
+ * **alloc_grid - cretes grid into row and column
+ * @width: the column
+ * @height: the row
+ * Return: Success
+ */
+
 int **alloc_grid(int width, int height)
 {
 	int **grid;
@@ -12,15 +19,15 @@ int **alloc_grid(int width, int height)
 
 	if (grid == NULL)
 	return (NULL);
-	
+
 	for (i = 0; i < height; i++)
 	{
 		grid[i] = malloc(width * sizeof(int));
-		
+
 		if (grid[i] == NULL)
 		{
 			for (j = 0; j < width; j++)
-				free(grid[i]);
+				free(grid[j]);
 			free(grid);
 			return (NULL);
 		}
