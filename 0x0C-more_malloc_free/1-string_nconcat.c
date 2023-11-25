@@ -18,18 +18,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	
+
 	if (n >= strlen(s2))
 		n = strlen(s2);
-	
+
 	ptr = malloc(strlen(s1) + n + 1);
 
 	if (ptr == NULL)
 		return (NULL);
 
 	strcpy(ptr, s1);
-	strcat(ptr, s2);
-	
-	free(ptr);
+	strncat(ptr, s2, n);
 	return (ptr);
 }
