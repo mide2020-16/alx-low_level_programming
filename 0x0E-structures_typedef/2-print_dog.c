@@ -4,9 +4,7 @@
 /**
  *
  * print_dog - Prints a data of a dog
- *
  * @d: the instance of dog
- *
  * Description: A dog data
  */
 
