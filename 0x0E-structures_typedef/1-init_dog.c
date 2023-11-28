@@ -15,14 +15,15 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 	{
 		d->name = name;
 		d->owner = owner;
-	};
-	if (d->name != NULL && d->owner != NULL)
-		d->age = age;
-	else
-	{
-		free(d->name);
-		free(d->owner);
-		d->name = NULL;
-		d->owner = NULL;
+
+		if (d->name != NULL && d->owner != NULL)
+			d->age = age;
+		else
+		{
+			free(d->name);
+			free(d->owner);
+			d->name = NULL;
+			d->owner = NULL;
+		}
 	}
 }
