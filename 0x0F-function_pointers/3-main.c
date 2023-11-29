@@ -1,16 +1,19 @@
 #include "3-calc.h"
 #include <stdio.h>
 
-
 int main(int argc, char *argv[])
 {
-	int i = 0;
-	int j = 4;
-	char operator = argv[argc - 2];
+	int i, j, num1, num2;
+	char symbol;
+	i = 0;
+	j = 4;
+	
+	num1 = atoi(argv[i + 1]);
+	num2 = atoi(argv[argc - 1]);
+	symbol = argv[argc - 2];
+	int (*operator)(int, int);
 
-	int num1 = atoi(argv[i + 1]);
-
-	int num2 = atoi(argv[argc - 1]);
+	operator = get_op_func(argv[symbol])
 
 	if (argc != j)
 	{
@@ -18,13 +21,13 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (operator != '+' || operator != '-' || operator != '*' || operator != '/' || operator != '%')
+	if (operator == NULL)
 	{
 		print("Error\n");
 		exit(99);
 	}
 
-	if ((operator == '/' && num2 == 0) || (operator == '%' && num2 == 0))
+	if ((symbol == '/' && num2 == 0) || (symbol == '%' && num2 == 0))
 	{
 		printf("Error\n");
 		exit(100);
