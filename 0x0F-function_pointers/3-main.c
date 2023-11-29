@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-	int i, num1, num2, result;
+	int num1, num2, result;
 	
 	int (*operator)(int, int);
 	
@@ -21,11 +21,11 @@ int main(int argc, char *argv[])
 
 	if (operator == NULL)
 	{
-		print("Error\n");
+		printf("Error\n");
 		exit(99);
 	}
 
-	if ((argv[2] == '/' || argv[2] == '%') && num2 == 0)
+	if ((*argv[2] == '/' || *argv[2] == '%') && num2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
