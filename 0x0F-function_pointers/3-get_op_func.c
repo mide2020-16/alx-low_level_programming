@@ -4,12 +4,21 @@
 
 int (*get_op_func(char *s))(int, int)
 {
-	op_t operation;
+	int i;
+	op_t ops[] = {
+	        {"+", op_add},
+	        {"-", op_sub},
+	        {"*", op_mul},
+	        {"/", op_div},
+	        {"%", op_mod},
+	        {NULL, NULL}
+   	 };
 
-	operation = malloc(sizeof(op_t));
-
-	strcpy(operation->op, s);
-
-	get_op_func(operation->);
+	while (i = 0; ops[i].op != NULL)
+		{
+			if (s != ops[i].op)
+			{
+				return (NULL);
+			}
+		}
 }
-
