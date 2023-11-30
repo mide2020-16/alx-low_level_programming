@@ -2,6 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - the main function
+ * @argc: the counts
+ * @argv: the vectors
+ * Return: Success Always
+ */
+
 int main(int argc, char *argv[])
 {
 	int num1, num2, result;
