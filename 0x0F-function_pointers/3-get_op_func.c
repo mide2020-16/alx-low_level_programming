@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * get_op_func - Get the operator to perform an operaation
+ * @s: the symbol
+ * Return: Success
+ */
+
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
