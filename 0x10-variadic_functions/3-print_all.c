@@ -42,7 +42,7 @@ void print_all(const char * const format, ...)
 				check_stat = 1;
 				break;
 		}
-		if (format[i + 1] != '\0' && check_stat = 0)
+		if (format[i + 1] != '\0' && check_stat == 0)
 			printf(", ");
 		i++;
 	}
