@@ -3,65 +3,47 @@
 #include "variadic_functions.h"
 
 /**
- * print_all - Prints all typ of arg
+ * print_all - Print all types of arg
  * @format: The format of types
  */
-
 void print_all(const char * const format, ...)
 {
 	va_list args;
+	const char *ptr = format;
+       	char current_format;
+       	int printed = 0;
 
-	char current_format;
-
-	char char_arg;
-
-	float float_arg;
-
-	int int_arg;
-
-	char *str_arg;
-
-	int printed = 0;
-	
 	va_start(args, format);
 
-	while((current_format = format))
+	while (*ptr)
 	{
 		if (printed)
 			printf(",");
+		current_format = *ptr;
 
-		switch(current_format)
+		switch (current_format)
 		{
 			case('c'):
-				char_arg = (char)va_arg(args, int);
-				printf("%c", char_arg);
-				printed = 1;
+				printf("%c", (char)va_arg(args, int));
 				break;
 			case('i'):
-				int_arg = va_arg(args, int);
-				printf("%d", int_arg);
-				printed = 1;
+				printf("%d", va_arg(args, int));
 				break;
 			case('f'):
-				float_arg = va_arg(args, double);
-				printf("%f", float_arg);
-				printed = 1;
+				printf("%f", (float)va_arg(args, double));
 				break;
 			case('s'):
-				str_arg = va_arg(args, char *);
-				if (str_arg == NULL)
+				if (va_arg(args, char *) == NULL)
 					printf("(nil)");
 				else
-					printf("%s", str_arg);
-				printed = 1;
+					printf("%s", va_arg(args, char *));
+				break;
+			default:
 				break;
 		}
-
-		format++;
+		printed = 1;
+		ptr++;
 	}
-
 	printf("\n");
-
 	va_end(args);
-
 }
