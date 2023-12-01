@@ -12,6 +12,7 @@ void print_all(const char * const format, ...)
 	const char *ptr = format;
        	char current_format;
        	int printed = 0;
+	char *str_arg;
 
 	va_start(args, format);
 
@@ -33,10 +34,13 @@ void print_all(const char * const format, ...)
 				printf("%f", (float)va_arg(args, double));
 				break;
 			case('s'):
-				if (va_arg(args, char *) == NULL)
-					printf("(nil)");
-				else
-					printf("%s", va_arg(args, char *));
+				{
+					str_arg = va_arg(args, char *);
+					if (str_arg == NULL)
+						printf("(nil)");
+					else
+						printf("%s", str_arg);
+				}
 				break;
 			default:
 				break;
