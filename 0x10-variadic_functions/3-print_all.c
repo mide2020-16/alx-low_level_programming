@@ -19,7 +19,7 @@ void print_all(const char * const format, ...)
 	while (*ptr)
 	{
 		if (printed)
-			printf(",");
+			printf(", ");
 		current_format = *ptr;
 
 		switch (current_format)
