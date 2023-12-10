@@ -3,18 +3,19 @@
 #include <stdlib.h>
 
 /**
- * add_new_node - Adds a new node
+ * add_node_end - Adds a new node
  * @head: the head node
  * @str: string int a node
  * Return: Reuturns new node
  */
 
-list_t *add_new_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
+	list_t *new_node;
 	if (str == NULL)
 		return (NULL);
 
-	list_t *new_node = malloc(sizeof(list_t));
+	new_node = malloc(sizeof(list_t));
 
 	if (new_node == NULL)
 		return (NULL);
