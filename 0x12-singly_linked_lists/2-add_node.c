@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * add_new_node - Adds a new node
+ * add_node - Adds a new node
  * @head: the head node
  * @str: string int a node
  * Return: Reuturns new node
@@ -13,6 +13,7 @@ list_t *add_node(list_t **head, const char *str)
 {
 	int size;
 	list_t *new_node;
+
 	if (str == NULL)
 		return (NULL);
 
