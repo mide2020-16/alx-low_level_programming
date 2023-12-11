@@ -5,7 +5,7 @@
  * print_listint - Lists all the elements in the structure
  * @h: the current structure
  * Return: returns number of elements in the structure.
- * 
+ *
 */
 
 size_t print_listint(const listint_t *h)

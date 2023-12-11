@@ -5,7 +5,7 @@
  * add_nodeint_end - Adds a new node to the end of the lists
  * @head: the current structure
  * @n: number
- * Returns: the adress of the new node
+ * Return: the adress of the new node
 */
 
 listint_t *add_nodeint_end(listint_t **head, const int n)

@@ -1,6 +1,11 @@
 #include "lists.h"
 #include <stdlib.h>
 
+/**
+ * pop_listint - Removes the current node
+ * @head: current node
+ * Returns: data
+*/
 int pop_listint(listint_t **head)
 {
 	if (*head == NULL)

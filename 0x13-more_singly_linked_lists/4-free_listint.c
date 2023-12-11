@@ -4,7 +4,7 @@
 /**
  * free_listint - Frees the structure
  * @head: the present structure
- * 
+ *
 */
 
 void free_listint(listint_t *head)
