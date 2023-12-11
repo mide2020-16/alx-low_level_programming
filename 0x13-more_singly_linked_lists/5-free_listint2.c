@@ -2,14 +2,14 @@
 #include <stdlib.h>
 
 /**
- * free_listint - Frees the structure
+ * free_listint2 - Frees the structure
  * @head: the present structure
- * 
-*/
+ *
+ */
 
-void free_listint(listint_t *head)
+void free_listint2(listint_t **head)
 {
-	listint_t *current = head;
+	listint_t *current = *head;
 	listint_t *next;
 
 	while (current != NULL)
@@ -18,4 +18,6 @@ void free_listint(listint_t *head)
 		free(current);
 		next = current;
 	}
+
+	*head = NULL;
 }
