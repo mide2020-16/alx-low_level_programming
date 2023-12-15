@@ -17,7 +17,7 @@ unsigned int binary_to_uint(const char *b)
 		return 0;
 
 	/* Loop through the string while it's not NULL and not the end of the string */
-	while (b != '\0' && b == NULL)
+	while (*b != '\0' && b == NULL)
 	{
 		/* Shift the result to the left by 1 bit and OR it with the binary representation of the current character */
 		result = (result << 1) | (*b - '0');
