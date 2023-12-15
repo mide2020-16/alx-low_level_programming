@@ -10,14 +10,22 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int result = 0;
+	unsigned int result;
 
-	while (*b != '\0' && b == NULL)
+	result = 0;
+
+	/* Check if the first character is not '1' or '0' or if the string is NULL */
+	if (b == NULL)
+		return (0);
+
+	/* Loop through the string while it's not NULL and not the end of the string */
+	while (*b != '\0')
 	{
-		/* Check if the first character is not '1' or '0' or if the string is NULL */
-		if ((*b != '1' || *b != '0') && (b == NULL))
+		if (*b != '1' && *b != '0')
 			return (0);
+		/* Shift the result to the left by 1 bit and OR it with the binary representation of the current character */
 		result = (result << 1) | (*b - '0');
+
 		b++;
 	}
 
