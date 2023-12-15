@@ -15,7 +15,7 @@ unsigned int binary_to_uint(const char *b)
 	while (*b != '\0' && b == NULL)
 	{
 		/* Check if the first character is not '1' or '0' or if the string is NULL */
-		if (*b != '1' || *b != '0')
+		if ((*b != '1' || *b != '0') && (b == NULL))
 			return (0);
 		result = (result << 1) | (*b - '0');
 		b++;
