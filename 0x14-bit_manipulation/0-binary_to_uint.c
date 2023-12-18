@@ -18,12 +18,12 @@ unsigned int binary_to_uint(const char *b)
 	if (b == NULL)
 		return (0);
 
-	/* Loop through the string while it's not NULL and not the end of the string */
+	/* Loop through the string */
 	while (*b != '\0')
 	{
 		if (*b != '1' && *b != '0')
 			return (0);
-		/* Shift the result to the left by 1 bit and OR it with the binary representation of the current character */
+		/* Shift binary current character */
 		result = (result << 1) | (*b - '0');
 
 		b++;
