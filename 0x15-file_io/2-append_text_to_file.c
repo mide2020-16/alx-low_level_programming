@@ -8,7 +8,7 @@
  * append_text_to_file - Appends a text to a created file
  * @filename: the path of the file
  * @text_content: the text to append
- * Return 
+ * Return: Success
 */
 
 int append_text_to_file(const char *filename, char *text_content)

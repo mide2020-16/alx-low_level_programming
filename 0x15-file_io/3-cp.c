@@ -26,7 +26,7 @@ void print_error(int exit_code, const char *message, const char *arg)
  * Return: 0 on success
 */
 
-int main (int argc, char **argv)
+int main(int argc, char **argv)
 {
 	const char *file_from;
 	const char *file_to;
@@ -34,6 +34,7 @@ int main (int argc, char **argv)
 	int fd_to;
 	char buffer[BUF_SIZE];
 	ssize_t read_bytes, write_bytes;
+	mode_t permission;
 
 	file_from = argv[1];
 	file_to = argv[2];
@@ -42,7 +43,8 @@ int main (int argc, char **argv)
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1 || file_from == NULL)
 		print_error(98, "Error: Can't read from file %s\n", file_from);
-	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	permission =  S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH; /* 0664*/
+	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, permission);
 	if (fd_to == -1 || file_from == NULL)
 		print_error(99, "Error: Can't write to %s\n", file_to);
 	read_bytes = read(fd_from, buffer, BUF_SIZE);
