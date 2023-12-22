@@ -13,7 +13,7 @@
 
 void print_error(int exit_code, const char *message, const char *arg)
 {
-	printf(message, arg);
+	dprintf(STDERR_FILENO, message, arg);
 	exit(exit_code);
 }
 
@@ -69,8 +69,8 @@ int main(int argc, char **argv)
 		}
 	}
 	if (close(fd_from) == -1)
-		print_error(100, "Error: Can't close fd %d\n", file_from);
+		print_error(100, "Error: Can't close fd %d\n", fd_from);
 	if (close(fd_to) == -1)
-		print_error(100, "Error: Can't close fd %d\n", file_to);
+		print_error(100, "Error: Can't close fd %d\n", fd_to);
 	return (0);
 }
