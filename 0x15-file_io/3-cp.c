@@ -18,7 +18,7 @@ void print_error(int exit_code, const char *message, const char *arg)
 }
 
 /**
- * print_error - Prints error message with an exit code
+ * print_errint - Prints error message with an exit code
  * @exit_code: the exit code
  * @message: error message
  * @fds: the argv stirng
