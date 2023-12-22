@@ -18,6 +18,18 @@ void print_error(int exit_code, const char *message, const char *arg)
 }
 
 /**
+ * print_error - Prints error message with an exit code
+ * @exit_code: the exit code
+ * @message: error message
+ * @fds: the argv stirng
+*/
+
+void print_errint(int exit_code, const char *message, int fds)
+{
+	dprintf(STDERR_FILENO, message, fds);
+	exit(exit_code);
+}
+/**
  * close_fd - closes fildes
  * @fd_from: file_from
  * @fd_to: file to
@@ -69,8 +81,8 @@ int main(int argc, char **argv)
 		}
 	}
 	if (close(fd_from) == -1)
-		print_error(100, "Error: Can't close fd %d\n", fd_from);
+		print_errint(100, "Error: Can't close fd %d\n", fd_from);
 	if (close(fd_to) == -1)
-		print_error(100, "Error: Can't close fd %d\n", fd_to);
+		print_errint(100, "Error: Can't close fd %d\n", fd_to);
 	return (0);
 }
