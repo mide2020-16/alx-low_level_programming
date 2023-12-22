@@ -70,14 +70,7 @@ int main(int argc, char **argv)
 	if (fd_to == -1)
 		print_error(99, "Error: Can't write to %s\n", file_to);
 
-	read_bytes = read(fd_from, buffer, BUF_SIZE);
-	if (read_bytes == -1)
-	{
-		close_fd(fd_from, fd_to);
-		print_error(98, "Error: Can't read from file %s\n", file_from);
-	}
-
-	if (read_bytes > 0)
+	if ((read_bytes = read(fd_from, buffer, BUF_SIZE)) > 0)
 	{
 		write_bytes = write(fd_to, buffer, read_bytes);
 		if (write_bytes != read_bytes)
@@ -85,6 +78,12 @@ int main(int argc, char **argv)
 			close_fd(fd_from, fd_to);
 			print_error(99, "Error: Can't write to %s\n", file_to);
 		}
+	}
+
+	if (read_bytes == -1)
+	{
+		close_fd(fd_from, fd_to);
+		print_error(98, "Error: Can't read from file %s\n", file_from);
 	}
 
 	if (close(fd_from) == -1)
