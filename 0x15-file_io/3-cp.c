@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "main.h"
 
-#define BUF_SIZE 10 * 1024
+#define BUF_SIZE (10 * 1024)
 
 /**
  * print_error - Prints error message with an exit code
