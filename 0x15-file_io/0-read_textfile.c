@@ -4,6 +4,20 @@
 #include <unistd.h>
 
 /**
+ * free_buffer - Reads the content in the filename and prints it on terminal
+ * @fd: the path of the file
+ * @buffer: the number of lettera to print
+ * @value: value
+*/
+
+void free_buffer(int fd, char *buffer, int value)
+{
+	free(buffer);
+	close(fd);
+	return (value);
+}
+
+/**
  * read_textfile - Reads the content in the filename and prints it on terminal
  * @filename: the path of the file
  * @letters: the number of lettera to print
@@ -30,19 +44,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	read_byte = read(fd, buffer, letters);
 	if (read_byte == -1)
-	{
-		free(buffer);
-		close(fd);
-		return (0);
-	}
+		free_buffer(fd, buffer, 0);
 	buffer[read_byte] = '\0';
 	write_byte = write(STDOUT_FILENO, buffer, read_byte);
 	if (write_byte == -1)
-	{
-		free(buffer);
-		close(fd);
-		return (0);
-	}
+		free_buffer(fd, buffer, 0);
 	free(buffer);
 	close(fd);
 	return (read_byte);
