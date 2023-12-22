@@ -39,10 +39,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	buffer = malloc((sizeof(char *) * letters) + 1);
 	if (buffer == NULL)
-	{
-		close(fd);
-		return (0);
-	}
+		free_buffer(fd, "", 0);
 	read_byte = read(fd, buffer, letters);
 	if (read_byte == -1)
 		free_buffer(fd, buffer, 0);
