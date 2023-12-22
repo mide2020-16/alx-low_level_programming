@@ -10,7 +10,7 @@
  * @value: value
 */
 
-void free_buffer(int fd, char *buffer, int value)
+int free_buffer(int fd, char *buffer, int value)
 {
 	free(buffer);
 	close(fd);
