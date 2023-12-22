@@ -29,6 +29,7 @@ void print_errint(int exit_code, const char *message, int fds)
 	dprintf(STDERR_FILENO, message, fds);
 	exit(exit_code);
 }
+
 /**
  * close_fd - closes fildes
  * @fd_from: file_from
@@ -57,20 +58,25 @@ int main(int argc, char **argv)
 
 	file_from = argv[1];
 	file_to = argv[2];
+
 	if (argc != 3)
 		print_error(97, "Usage : cp file_from file_to\n", NULL);
+
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
 		print_error(98, "Error: Can't read from file %s\n", file_from);
+
 	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_to == -1)
 		print_error(99, "Error: Can't write to %s\n", file_to);
+
 	read_bytes = read(fd_from, buffer, BUF_SIZE);
 	if (read_bytes == -1)
 	{
 		close_fd(fd_from, fd_to);
 		print_error(98, "Error: Can't read from file %s\n", file_from);
 	}
+
 	if (read_bytes > 0)
 	{
 		write_bytes = write(fd_to, buffer, read_bytes);
@@ -80,9 +86,12 @@ int main(int argc, char **argv)
 			print_error(99, "Error: Can't write to %s\n", file_to);
 		}
 	}
+
 	if (close(fd_from) == -1)
 		print_errint(100, "Error: Can't close fd %d\n", fd_from);
+
 	if (close(fd_to) == -1)
 		print_errint(100, "Error: Can't close fd %d\n", fd_to);
+
 	return (0);
 }
