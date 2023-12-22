@@ -4,10 +4,11 @@
 #include <unistd.h>
 
 /**
- * free_buffer - Reads the content in the filename and prints it on terminal
- * @fd: the path of the file
- * @buffer: the number of lettera to print
+ * free_buffer - freeing buffer
+ * @fd: file descriptor
+ * @buffer: buffer to free
  * @value: value
+ * Return: value
 */
 
 int free_buffer(int fd, char *buffer, int value)
