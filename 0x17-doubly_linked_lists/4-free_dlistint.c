@@ -3,17 +3,18 @@
 /**
  * free_dlistint - Free each node after its execution
  * @head: the current node
-*/
+ */
 void free_dlistint(dlistint_t *head)
 {
-    dlistint_t *current, *next;
+	dlistint_t *current, *next;
 
-    current = head;
+	current = head;
 
-    while (current != NULL) {
-        next = current->next;
-        free(current);
-        current = next;
-    }
-
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
 }
+
