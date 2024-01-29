@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
  * _strspn - Calculates the length of the initial segment of a string
@@ -13,7 +14,7 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int count = 0;
-	while (*s != '\0' && *_strchr(accept, *s) != NULL)
+	while (*s != '\0' && *_strchr(accept, *s) != '\0')
 	{
 		count++;
 		s++;
@@ -34,7 +35,7 @@ char *_strpbrk(char *s, char *accept)
 {
 	while (*s != '\0')
 	{
-		if (_strchr(accept, *s) != NULL)
+		if (_strchr(accept, *s) != '\0')
 			return s;
 		s++;
 	}
