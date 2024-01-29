@@ -1,5 +1,5 @@
 #include "main.h"
-#include <string.h>
+
 /**
  * _strchr - Locates the first occurrence of a character in a string
  * @s: The input string
@@ -8,17 +8,14 @@
  * Return: A pointer to the first occurrence of the character in the string,
  *         or NULL if the character is not found.
  */
-char *_strchr(char *s, char c)
-{
-        while (*s != '\0')
-        {
-                if (*s == c)
-                {
-                        return s;
-                }
-                s++;
+char *_strchr(char *s, char c) {
+    while (*s != '\0') {
+        if (*s == c) {
+            return s;
         }
-        return NULL;
+        s++;
+    }
+    return NULL;
 }
 
 /**
@@ -30,15 +27,13 @@ char *_strchr(char *s, char c)
  * Return: The length of the initial segment of s consisting of only characters
  *         from accept.
  */
-unsigned int _strspn(char *s, char *accept)
-{
-        unsigned int count = 0;
-        while (*s != '\0' && *strchr(accept, *s) != '\0')
-        {
-                count++;
-                s++;
-        }
-        return count;
+unsigned int _strspn(char *s, char *accept) {
+    unsigned int count = 0;
+    while (*s != '\0' && *_strchr(accept, *s) != '\0') {
+        count++;
+        s++;
+    }
+    return count;
 }
 
 /**
@@ -52,7 +47,7 @@ unsigned int _strspn(char *s, char *accept)
  */
 char *_strpbrk(char *s, char *accept) {
     while (*s != '\0') {
-        if (*strchr(accept, *s) != '\0') {
+        if (_strchr(accept, *s) != NULL) {
             return s;
         }
         s++;
