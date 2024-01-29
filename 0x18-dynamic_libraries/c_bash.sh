@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Compile all .c files into object files
-gcc -Wall -Werror -pedantic -Wextra -fPIC -c c_operationns.c
+gcc -Wall -Werror -pedantic -Wextra -fPIC -c c_operations.c
 
 # Create the dynamic library liball.so
 gcc -shared -o 100-operations.so c_operations.o
