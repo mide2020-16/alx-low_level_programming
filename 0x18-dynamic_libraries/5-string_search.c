@@ -33,7 +33,7 @@ char *_strchr(char *s, char c)
 unsigned int _strspn(char *s, char *accept)
 {
         unsigned int count = 0;
-        while (*s != '\0' && *_strchr(accept, *s) != '\0')
+        while (*s != '\0' && strchr(accept, *s) != '\0')
         {
                 count++;
                 s++;
@@ -52,7 +52,7 @@ unsigned int _strspn(char *s, char *accept)
  */
 char *_strpbrk(char *s, char *accept) {
     while (*s != '\0') {
-        if (*_strchr(accept, *s) != '\0') {
+        if (strchr(accept, *s) != '\0') {
             return s;
         }
         s++;
