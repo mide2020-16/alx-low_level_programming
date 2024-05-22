@@ -1,0 +1,10 @@
+#!/usr/bin/env make
+# A simple make file script
+
+.PHONY := all
+
+all: school
+
+school:
+	gcc main.c school.c -o school
+
