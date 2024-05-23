@@ -4,3 +4,6 @@
 
 ## Binary Search Algorithms
 
+## Advanced Tasks
+
+### Jump Search Algorithms
