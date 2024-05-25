@@ -32,7 +32,7 @@ hash_node_t *create_node(const char *key, const char *value)
 	}
 
 	new_node->next = NULL;
-	return new_node;
+	return (new_node);
 }
 
 /**
